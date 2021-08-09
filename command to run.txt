@@ -1,0 +1,1 @@
+ newman run API_Testing_Data_Var.postman_collection.json -g Bhanu\'s_WorkSpace.postman_globals.json -e QA.postman_environment.json -d Data_Variables.csv -r htmlextra

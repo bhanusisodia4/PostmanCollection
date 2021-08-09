@@ -1,0 +1,1056 @@
+{
+	"info": {
+		"_postman_id": "6903e9f6-8bff-45a5-b7c8-fbbb48482f0b",
+		"name": "API_Testing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Day1",
+			"item": [
+				{
+					"name": "SimpleGoogleReq",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "www.google.com",
+							"host": [
+								"www",
+								"google",
+								"com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LoginAPIRequest",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Check if the status of the response body is success\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.status).to.eql(\"success\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n\r\n\"email\": \"jatinvsharma@gmail.com\",\r\n\r\n\"password\": \"123123123\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://139.59.91.96:3000/user/signin",
+							"protocol": "http",
+							"host": [
+								"139",
+								"59",
+								"91",
+								"96"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"signin"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "LoginAPIRequest",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": " {\r\n\r\n\"email\": \"jatinvsharma@gmail.com\",\r\n\r\n\"password\": \"123123123\"\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://139.59.91.96:3000/user/signin",
+									"protocol": "http",
+									"host": [
+										"139",
+										"59",
+										"91",
+										"96"
+									],
+									"port": "3000",
+									"path": [
+										"user",
+										"signin"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "X-HTTP-Method-Override"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "470"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1d6-+LHI96qgt5VZzvW4EHvHQw\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 30 May 2021 08:11:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsYXN0X21vZGlmaWVkIjoxNjIyMzYyMzAxODg3LCJleHBpcmVfYXQiOjE2Mjc1NDYzMDE4ODcsInBheWxvYWQiOnsiaWQiOjIsIm5hbWUiOiJKYXRpbiBTaGFybWEiLCJlbWFpbCI6ImphdGludnNoYXJtYUBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJtb2JpbGVfbnVtYmVyIjoiMTIzMTIzMTIzMSJ9fQ.6C7TTXoVGNAEiqtzAv6uF--jFbK-yCXrTxEbe17kQX0\",\n        \"user\": {\n            \"id\": 2,\n            \"name\": \"Jatin Sharma\",\n            \"email\": \"jatinvsharma@gmail.com\",\n            \"role\": \"admin\",\n            \"mobile_number\": \"1231231231\"\n        }\n    }\n}"
+						},
+						{
+							"name": "LoginAPIRequest",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": " {\r\n\r\n\"email\": \"jatinvsharma@gmail.com\",\r\n\r\n\"password\": \"123123123\"\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://139.59.91.96:3000/user/signin",
+									"protocol": "http",
+									"host": [
+										"139",
+										"59",
+										"91",
+										"96"
+									],
+									"port": "3000",
+									"path": [
+										"user",
+										"signin"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "X-HTTP-Method-Override"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "470"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1d6-+LHI96qgt5VZzvW4EHvHQw\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 30 May 2021 08:11:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsYXN0X21vZGlmaWVkIjoxNjIyMzYyMzAxODg3LCJleHBpcmVfYXQiOjE2Mjc1NDYzMDE4ODcsInBheWxvYWQiOnsiaWQiOjIsIm5hbWUiOiJKYXRpbiBTaGFybWEiLCJlbWFpbCI6ImphdGludnNoYXJtYUBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJtb2JpbGVfbnVtYmVyIjoiMTIzMTIzMTIzMSJ9fQ.6C7TTXoVGNAEiqtzAv6uF--jFbK-yCXrTxEbe17kQX0\",\n        \"user\": {\n            \"id\": 2,\n            \"name\": \"Jatin Sharma\",\n            \"email\": \"jatinvsharma@gmail.com\",\n            \"role\": \"admin\",\n            \"mobile_number\": \"1231231231\"\n        }\n    }\n}"
+						},
+						{
+							"name": "LoginAPIRequest_InvalidRequest (Wrong Password)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": " {\r\n\r\n\"email\": \"jatinvsharma@gmail.com\",\r\n\r\n\"password\": \"1231231234554\"\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://139.59.91.96:3000/user/signin?",
+									"protocol": "http",
+									"host": [
+										"139",
+										"59",
+										"91",
+										"96"
+									],
+									"port": "3000",
+									"path": [
+										"user",
+										"signin"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": null
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "X-HTTP-Method-Override"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "66"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"42-EM6i+peXZrWvzvm89szEOQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 30 May 2021 08:14:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"message\": \"Invalid password, Please try again!\"\n}"
+						}
+					]
+				},
+				{
+					"name": "AddProduct",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Check if response contains status success\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.status).to.eql(\"success\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsYXN0X21vZGlmaWVkIjoxNjIyMzE0NTcxNjkxLCJleHBpcmVfYXQiOjE2Mjc0OTg1NzE2OTEsInBheWxvYWQiOnsiaWQiOjIsIm5hbWUiOiJKYXRpbiBTaGFybWEiLCJlbWFpbCI6ImphdGludnNoYXJtYUBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJtb2JpbGVfbnVtYmVyIjoiMTIzMTIzMTIzMSJ9fQ.gAvWI--Zk2LL0ACFsD8dBVlLLriYxUiSGiR_5GLMHxQ",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n\r\n\"prod_name\": \"Apple Iphone 20\",\r\n\r\n\"prod_desc\": \"Hello Apple has launched a new Product, which we cant afford\",\r\n\r\n\"prod_price\": 400000\r\n }"
+						},
+						"url": {
+							"raw": "http://139.59.91.96:3000/api/v1/products",
+							"protocol": "http",
+							"host": [
+								"139",
+								"59",
+								"91",
+								"96"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateProductAPI",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"To check if req is success or not\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.status).to.eql(\"success\");\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsYXN0X21vZGlmaWVkIjoxNjIyMzE0NTcxNjkxLCJleHBpcmVfYXQiOjE2Mjc0OTg1NzE2OTEsInBheWxvYWQiOnsiaWQiOjIsIm5hbWUiOiJKYXRpbiBTaGFybWEiLCJlbWFpbCI6ImphdGludnNoYXJtYUBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJtb2JpbGVfbnVtYmVyIjoiMTIzMTIzMTIzMSJ9fQ.gAvWI--Zk2LL0ACFsD8dBVlLLriYxUiSGiR_5GLMHxQ",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n\r\n\"prod_name\": \"Apple Iphone 20\",\r\n\r\n\"prod_desc\": \"Hello Apple has launched a new Product, which we cant afford\",\r\n\r\n\"prod_price\": 500000\r\n }"
+						},
+						"url": {
+							"raw": "http://139.59.91.96:3000/api/v1/products/16320",
+							"protocol": "http",
+							"host": [
+								"139",
+								"59",
+								"91",
+								"96"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"16320"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetProductDetailAPI",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"to check if ID is correct\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.id).to.eql(16321);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Check product name\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.prod_name).to.eql(\"Apple Iphone 20\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsYXN0X21vZGlmaWVkIjoxNjIyMzE2MTE4MjU2LCJleHBpcmVfYXQiOjE2Mjc1MDAxMTgyNTcsInBheWxvYWQiOnsiaWQiOjIsIm5hbWUiOiJKYXRpbiBTaGFybWEiLCJlbWFpbCI6ImphdGludnNoYXJtYUBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJtb2JpbGVfbnVtYmVyIjoiMTIzMTIzMTIzMSJ9fQ.-X8mLmGwDxqmzViMuvUi4vOXzATW-nMof16zwaBgwAA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://139.59.91.96:3000/api/v1/products/16321",
+							"protocol": "http",
+							"host": [
+								"139",
+								"59",
+								"91",
+								"96"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"16321"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SearchAllAPI",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsYXN0X21vZGlmaWVkIjoxNjIyMzE2MTE4MjU2LCJleHBpcmVfYXQiOjE2Mjc1MDAxMTgyNTcsInBheWxvYWQiOnsiaWQiOjIsIm5hbWUiOiJKYXRpbiBTaGFybWEiLCJlbWFpbCI6ImphdGludnNoYXJtYUBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJtb2JpbGVfbnVtYmVyIjoiMTIzMTIzMTIzMSJ9fQ.-X8mLmGwDxqmzViMuvUi4vOXzATW-nMof16zwaBgwAA",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://139.59.91.96:3000/api/v1/products/search/iphone",
+							"protocol": "http",
+							"host": [
+								"139",
+								"59",
+								"91",
+								"96"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"search",
+								"iphone"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "This Collection contains group of API for Test Environment"
+		},
+		{
+			"name": "Day2",
+			"item": [
+				{
+					"name": "GoogleReq_Using_Import",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "www.google.com",
+							"host": [
+								"www",
+								"google",
+								"com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LoginAPIRequest",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"console.log(\"I am in Test Tab\")\r",
+									"var jsonData = pm.response.json();\r",
+									"var token =jsonData.data.token;\r",
+									"\r",
+									"console.log(\"<-------Token------->\"+token)\r",
+									"pm.globals.set(\"token\",token)\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"console.log(\"I am in prereq tab\")\r",
+									"var email=\"jatinvsharma@gmail.com\" //this is a JS variable\r",
+									"console.log(email)\r",
+									"//Local variable\r",
+									"pm.variables.set(\"emailAddresss\",email)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n\r\n\"email\":\"{{emailAddress}}\",\r\n\r\n\"password\": \"{{password}}\"\r\n \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/signin",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"signin"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "LoginAPIRequest",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": " {\r\n\r\n\"email\": \"jatinvsharma@gmail.com\",\r\n\r\n\"password\": \"123123123\"\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://139.59.91.96:3000/user/signin",
+									"protocol": "http",
+									"host": [
+										"139",
+										"59",
+										"91",
+										"96"
+									],
+									"port": "3000",
+									"path": [
+										"user",
+										"signin"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "X-HTTP-Method-Override"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "470"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1d6-+LHI96qgt5VZzvW4EHvHQw\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 30 May 2021 08:11:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsYXN0X21vZGlmaWVkIjoxNjIyMzYyMzAxODg3LCJleHBpcmVfYXQiOjE2Mjc1NDYzMDE4ODcsInBheWxvYWQiOnsiaWQiOjIsIm5hbWUiOiJKYXRpbiBTaGFybWEiLCJlbWFpbCI6ImphdGludnNoYXJtYUBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJtb2JpbGVfbnVtYmVyIjoiMTIzMTIzMTIzMSJ9fQ.6C7TTXoVGNAEiqtzAv6uF--jFbK-yCXrTxEbe17kQX0\",\n        \"user\": {\n            \"id\": 2,\n            \"name\": \"Jatin Sharma\",\n            \"email\": \"jatinvsharma@gmail.com\",\n            \"role\": \"admin\",\n            \"mobile_number\": \"1231231231\"\n        }\n    }\n}"
+						},
+						{
+							"name": "LoginAPIRequest",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": " {\r\n\r\n\"email\": \"jatinvsharma@gmail.com\",\r\n\r\n\"password\": \"123123123\"\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://139.59.91.96:3000/user/signin",
+									"protocol": "http",
+									"host": [
+										"139",
+										"59",
+										"91",
+										"96"
+									],
+									"port": "3000",
+									"path": [
+										"user",
+										"signin"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "X-HTTP-Method-Override"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "470"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1d6-+LHI96qgt5VZzvW4EHvHQw\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 30 May 2021 08:11:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsYXN0X21vZGlmaWVkIjoxNjIyMzYyMzAxODg3LCJleHBpcmVfYXQiOjE2Mjc1NDYzMDE4ODcsInBheWxvYWQiOnsiaWQiOjIsIm5hbWUiOiJKYXRpbiBTaGFybWEiLCJlbWFpbCI6ImphdGludnNoYXJtYUBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJtb2JpbGVfbnVtYmVyIjoiMTIzMTIzMTIzMSJ9fQ.6C7TTXoVGNAEiqtzAv6uF--jFbK-yCXrTxEbe17kQX0\",\n        \"user\": {\n            \"id\": 2,\n            \"name\": \"Jatin Sharma\",\n            \"email\": \"jatinvsharma@gmail.com\",\n            \"role\": \"admin\",\n            \"mobile_number\": \"1231231231\"\n        }\n    }\n}"
+						},
+						{
+							"name": "LoginAPIRequest_InvalidRequest (Wrong Password)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": " {\r\n\r\n\"email\": \"jatinvsharma@gmail.com\",\r\n\r\n\"password\": \"1231231234554\"\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://139.59.91.96:3000/user/signin?",
+									"protocol": "http",
+									"host": [
+										"139",
+										"59",
+										"91",
+										"96"
+									],
+									"port": "3000",
+									"path": [
+										"user",
+										"signin"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": null
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Vary",
+									"value": "X-HTTP-Method-Override"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "66"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"42-EM6i+peXZrWvzvm89szEOQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 30 May 2021 08:14:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"message\": \"Invalid password, Please try again!\"\n}"
+						}
+					]
+				},
+				{
+					"name": "AddProduct",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"var id = jsonData.data.id;\r",
+									"\r",
+									"pm.globals.set(\"id\",id)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n\r\n\"prod_name\": \"Apple Iphone 20\",\r\n\r\n\"prod_desc\": \"Hello Apple has launched a new Product, which we cant afford\",\r\n\r\n\"prod_price\": 400000\r\n }"
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/products",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetProductDetailAPI",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"to check if ID is correct\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.id).to.eql(16321);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Check product name\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.prod_name).to.eql(\"Apple Iphone 20\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsYXN0X21vZGlmaWVkIjoxNjIyMzE2MTE4MjU2LCJleHBpcmVfYXQiOjE2Mjc1MDAxMTgyNTcsInBheWxvYWQiOnsiaWQiOjIsIm5hbWUiOiJKYXRpbiBTaGFybWEiLCJlbWFpbCI6ImphdGludnNoYXJtYUBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJtb2JpbGVfbnVtYmVyIjoiMTIzMTIzMTIzMSJ9fQ.-X8mLmGwDxqmzViMuvUi4vOXzATW-nMof16zwaBgwAA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/v1/products/{{id}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"{{id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SearchAllAPI",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsYXN0X21vZGlmaWVkIjoxNjIyMzE2MTE4MjU2LCJleHBpcmVfYXQiOjE2Mjc1MDAxMTgyNTcsInBheWxvYWQiOnsiaWQiOjIsIm5hbWUiOiJKYXRpbiBTaGFybWEiLCJlbWFpbCI6ImphdGludnNoYXJtYUBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJtb2JpbGVfbnVtYmVyIjoiMTIzMTIzMTIzMSJ9fQ.-X8mLmGwDxqmzViMuvUi4vOXzATW-nMof16zwaBgwAA",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://139.59.91.96:3000/api/v1/products/search/iphone",
+							"protocol": "http",
+							"host": [
+								"139",
+								"59",
+								"91",
+								"96"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"search",
+								"iphone"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateProductAPI",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"To check if req is success or not\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.status).to.eql(\"success\");\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsYXN0X21vZGlmaWVkIjoxNjIyMzE0NTcxNjkxLCJleHBpcmVfYXQiOjE2Mjc0OTg1NzE2OTEsInBheWxvYWQiOnsiaWQiOjIsIm5hbWUiOiJKYXRpbiBTaGFybWEiLCJlbWFpbCI6ImphdGludnNoYXJtYUBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJtb2JpbGVfbnVtYmVyIjoiMTIzMTIzMTIzMSJ9fQ.gAvWI--Zk2LL0ACFsD8dBVlLLriYxUiSGiR_5GLMHxQ",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n\r\n\"prod_name\": \"Apple Iphone 40\",\r\n\r\n\"prod_desc\": \"Hello Apple has launched a new Product, which we cant afford\",\r\n\r\n\"prod_price\": 500000\r\n }"
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/products/{{id}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"{{id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

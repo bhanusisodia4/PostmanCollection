@@ -1,0 +1,19 @@
+{
+	"id": "7d183c0b-afa9-4ee6-8fae-7fb1c761ac17",
+	"values": [
+		{
+			"key": "token",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "id",
+			"value": "",
+			"enabled": true
+		}
+	],
+	"name": "Bhanu's_WorkSpace Globals",
+	"_postman_variable_scope": "globals",
+	"_postman_exported_at": "2021-05-30T18:59:26.318Z",
+	"_postman_exported_using": "Postman/8.5.1"
+}
